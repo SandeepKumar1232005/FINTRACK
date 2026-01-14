@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope, FaCode } from 'react-icons/fa';
+import { SiLeetcode, SiCodechef, SiCodeforces } from 'react-icons/si';
 import { motion } from 'framer-motion';
 import sandeepImg from '../assets/sandeep.jpg';
 
@@ -37,6 +38,9 @@ const Hero = () => {
                     >
                         <a href="https://github.com/SandeepKumar1232005" target="_blank" rel="noopener noreferrer" className="social-icon"><FaGithub /></a>
                         <a href="https://www.linkedin.com/in/sandeep-kumar-54908a2b7/" target="_blank" rel="noopener noreferrer" className="social-icon"><FaLinkedin /></a>
+                        <a href="https://leetcode.com/u/kitcse306/" target="_blank" rel="noopener noreferrer" className="social-icon"><SiLeetcode /></a>
+                        <a href="https://www.codechef.com/users/sandeep1232005" target="_blank" rel="noopener noreferrer" className="social-icon"><SiCodechef /></a>
+                        <a href="https://codeforces.com/profile/sandeepkumar2005" target="_blank" rel="noopener noreferrer" className="social-icon"><SiCodeforces /></a>
                         <a href="mailto:kit27.cse306@gmail.com" className="social-icon"><FaEnvelope /></a>
                     </motion.div>
                 </motion.div>
