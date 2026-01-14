@@ -550,18 +550,29 @@ button {
   line-height: 1.6;
 }
 
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow tags to wrap */
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
 .tech-tag {
   font-size: 0.85rem;
   color: var(--accent-secondary);
   background: rgba(59, 130, 246, 0.1);
-  padding: 4px 12px;
-  border-radius: 4px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .project-links {
   display: flex;
   gap: 1.5rem;
   margin-top: auto;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 1.5rem;
 }
 
 .icon-link {
@@ -569,10 +580,12 @@ button {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  transition: all 0.3s;
 }
 
 .icon-link:hover {
   color: var(--accent-primary);
+  transform: translateX(5px);
 }
 
 /* Footer */
