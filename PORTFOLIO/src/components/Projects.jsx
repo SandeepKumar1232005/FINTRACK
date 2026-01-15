@@ -12,11 +12,11 @@ const Projects = () => {
             github: "#"
         },
         {
-            title: "ScribeConnect",
+            title: "Paperly",
             description: "A secure and responsive note-taking and document management platform built with React.js, Node.js, Express.js, and MongoDB. It features JWT authentication, personalized dashboards, and seamless cross-device usability—allowing users to write, edit, and manage content efficiently.",
             tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
             link: "#",
-            github: "#"
+            github: "https://github.com/SandeepKumar1232005/Paperly"
         },
         {
             title: "MedVisor AI",
