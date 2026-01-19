@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700;800&display=swap');
 
 :root {
   --bg-color: #0a0a0a;
@@ -11,6 +11,7 @@
   --glass-border: rgba(255, 255, 255, 0.05);
   --nav-bg: rgba(10, 10, 10, 0.8);
   --font-main: 'Outfit', sans-serif;
+  --font-display: 'Cinzel', serif;
   --nav-height: 70px;
 }
 
@@ -137,6 +138,7 @@ button {
 }
 
 .section-title {
+  font-family: var(--font-display);
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
@@ -189,6 +191,7 @@ button {
 }
 
 .logo {
+  font-family: var(--font-display);
   font-size: 1.8rem;
   font-weight: 700;
   color: #fff;
@@ -320,6 +323,7 @@ button {
 }
 
 .hero-title {
+  font-family: var(--font-display);
   font-size: 5rem;
   line-height: 1.1;
   margin-bottom: 1rem;
@@ -419,6 +423,7 @@ button {
 }
 
 .about-subtitle {
+  font-family: var(--font-display);
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   color: #fff;
@@ -492,6 +497,7 @@ button {
 }
 
 .skill-category {
+  font-family: var(--font-display);
   margin-bottom: 1.5rem;
   font-size: 1.4rem;
   font-weight: 600;
@@ -537,6 +543,7 @@ button {
 }
 
 .project-title {
+  font-family: var(--font-display);
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #fff;
@@ -607,6 +614,7 @@ button {
 }
 
 .footer-name {
+  font-family: var(--font-display);
   font-size: 2.5rem;
   margin-bottom: 1rem;
   background: var(--accent-gradient);
