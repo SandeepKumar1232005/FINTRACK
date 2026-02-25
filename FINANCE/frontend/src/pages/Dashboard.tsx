@@ -81,28 +81,28 @@ const Dashboard = () => {
         <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {summaryCards.map((card, idx) => (
-                    <div key={idx} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex items-center space-x-4 hover:shadow-md transition-shadow">
-                        <div className={`p-4 rounded-full ${card.bg}`}>
+                    <div key={idx} className="bg-slate-800 rounded-xl shadow-sm border border-slate-700 p-6 flex items-center space-x-4 hover:shadow-md transition-shadow">
+                        <div className={`p-4 rounded-full ${card.bg.replace('50', '900/50')}`}>
                             {card.icon}
                         </div>
                         <div>
-                            <p className="text-sm font-medium text-gray-500 mb-1">{card.title}</p>
-                            <h3 className="text-2xl font-bold text-gray-800">{card.value}</h3>
+                            <p className="text-sm font-medium text-slate-400 mb-1">{card.title}</p>
+                            <h3 className="text-2xl font-bold text-slate-100">{card.value}</h3>
                         </div>
                     </div>
                 ))}
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <h3 className="text-lg font-bold text-gray-800 mb-6">Financial Overview (₹)</h3>
+                <div className="bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-700">
+                    <h3 className="text-lg font-bold text-slate-100 mb-6">Financial Overview (₹)</h3>
                     <div className="h-72">
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart data={financialData}>
-                                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
-                                <XAxis dataKey="name" axisLine={false} tickLine={false} />
-                                <YAxis axisLine={false} tickLine={false} tickFormatter={(value) => `₹${value.toLocaleString()}`} />
-                                <Tooltip cursor={{ fill: '#f9fafb' }} formatter={(value: any) => `₹${Number(value).toLocaleString()}`} />
+                                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#334155" />
+                                <XAxis dataKey="name" axisLine={false} tickLine={false} stroke="#94a3b8" />
+                                <YAxis axisLine={false} tickLine={false} tickFormatter={(value) => `₹${value.toLocaleString()}`} stroke="#94a3b8" />
+                                <Tooltip cursor={{ fill: '#334155' }} formatter={(value: any) => `₹${Number(value).toLocaleString()}`} contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155', color: '#f8fafc' }} />
                                 <Bar dataKey="amount" radius={[4, 4, 0, 0]}>
                                     {financialData.map((entry, index) => (
                                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -113,8 +113,8 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col">
-                    <h3 className="text-lg font-bold text-gray-800 mb-6">Loan Portfolio Status</h3>
+                <div className="bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-700 flex flex-col">
+                    <h3 className="text-lg font-bold text-slate-100 mb-6">Loan Portfolio Status</h3>
                     <div className="flex-1 flex justify-center items-center h-72">
                         <ResponsiveContainer width="100%" height="100%">
                             <PieChart>
@@ -133,7 +133,7 @@ const Dashboard = () => {
                                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                     ))}
                                 </Pie>
-                                <Tooltip />
+                                <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155', color: '#f8fafc' }} />
                             </PieChart>
                         </ResponsiveContainer>
                     </div>

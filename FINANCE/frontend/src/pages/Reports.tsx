@@ -60,16 +60,16 @@ const Reports = () => {
     return (
         <div className="space-y-6">
             <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold text-gray-800">Reports & Exports</h2>
+                <h2 className="text-2xl font-bold text-slate-100">Reports & Exports</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center space-y-4">
-                    <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 mb-2">
+                <div className="bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-700 flex flex-col items-center justify-center text-center space-y-4">
+                    <div className="w-16 h-16 bg-slate-900/50 rounded-full flex items-center justify-center text-blue-400 mb-2">
                         <FileText size={32} />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-800">Loan Statements</h3>
-                    <p className="text-gray-500 text-sm max-w-sm">Download a comprehensive report of all active and closed loans, including outstanding balances and customer information.</p>
+                    <h3 className="text-xl font-bold text-slate-100">Loan Statements</h3>
+                    <p className="text-slate-400 text-sm max-w-sm">Download a comprehensive report of all active and closed loans, including outstanding balances and customer information.</p>
                     <button
                         onClick={handleExportLoans}
                         disabled={loading}
@@ -80,12 +80,12 @@ const Reports = () => {
                     </button>
                 </div>
 
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center space-y-4">
-                    <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600 mb-2">
+                <div className="bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-700 flex flex-col items-center justify-center text-center space-y-4">
+                    <div className="w-16 h-16 bg-slate-900/50 rounded-full flex items-center justify-center text-emerald-400 mb-2">
                         <FileText size={32} />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-800">Payment History</h3>
-                    <p className="text-gray-500 text-sm max-w-sm">Export a timeline of all recorded payments, including transaction methods and balances for accurate accounting.</p>
+                    <h3 className="text-xl font-bold text-slate-100">Payment History</h3>
+                    <p className="text-slate-400 text-sm max-w-sm">Export a timeline of all recorded payments, including transaction methods and balances for accurate accounting.</p>
                     <button
                         onClick={handleExportPayments}
                         disabled={loading}

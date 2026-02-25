@@ -33,7 +33,7 @@ const Login = () => {
             <div className="max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden">
                 <div className="p-8 text-center bg-slate-800 text-white border-b-4 border-blue-500">
                     <ShieldCheck className="w-16 h-16 mx-auto mb-4 text-blue-400" />
-                    <h2 className="text-3xl font-bold tracking-tight">FinAdmin Login</h2>
+                    <h2 className="text-3xl font-bold tracking-tight">FINTRACK Login</h2>
                     <p className="text-slate-300 mt-2">Internal Lending Platform</p>
                 </div>
 

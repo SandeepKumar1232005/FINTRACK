@@ -82,7 +82,7 @@ const Payments = () => {
     return (
         <div className="space-y-6">
             <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold text-gray-800">Payments & Collections</h2>
+                <h2 className="text-2xl font-bold text-slate-100">Payments & Collections</h2>
                 <button
                     onClick={() => setShowModal(true)}
                     className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors"
@@ -92,14 +92,14 @@ const Payments = () => {
                 </button>
             </div>
 
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                <div className="p-4 border-b border-gray-100 flex items-center bg-gray-50/50">
+            <div className="bg-slate-800 rounded-xl shadow-sm border border-slate-700 overflow-hidden">
+                <div className="p-4 border-b border-slate-700 flex items-center bg-slate-900/50">
                     <div className="relative flex-1 max-w-md">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
                         <input
                             type="text"
                             placeholder="Search by customer name or method..."
-                            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                            className="w-full pl-10 pr-4 py-2 rounded-lg bg-slate-800 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-slate-100 placeholder-slate-400"
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                         />
@@ -107,12 +107,12 @@ const Payments = () => {
                 </div>
 
                 {loading ? (
-                    <div className="p-8 text-center text-gray-500">Loading payments...</div>
+                    <div className="p-8 text-center text-slate-400">Loading payments...</div>
                 ) : (
                     <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse">
                             <thead>
-                                <tr className="bg-gray-50 text-gray-500 text-sm border-b uppercase tracking-wider">
+                                <tr className="bg-slate-900/50 text-slate-400 text-sm border-b border-slate-700 uppercase tracking-wider">
                                     <th className="p-4 font-semibold">Date</th>
                                     <th className="p-4 font-semibold">Customer (Loan ID)</th>
                                     <th className="p-4 font-semibold">Amount Paid</th>
@@ -123,26 +123,26 @@ const Payments = () => {
                             <tbody>
                                 {filteredPayments.length === 0 ? (
                                     <tr>
-                                        <td colSpan={5} className="p-8 text-center text-gray-500">No payments found.</td>
+                                        <td colSpan={5} className="p-8 text-center text-slate-400">No payments found.</td>
                                     </tr>
                                 ) : (
                                     filteredPayments.map((p) => (
-                                        <tr key={p._id} className="border-b hover:bg-gray-50 transition-colors">
-                                            <td className="p-4 text-sm text-gray-600">
+                                        <tr key={p._id} className="border-b border-slate-700 hover:bg-slate-700/30 transition-colors">
+                                            <td className="p-4 text-sm text-slate-400">
                                                 {new Date(p.paymentDate).toLocaleDateString()}
                                             </td>
                                             <td className="p-4">
-                                                <p className="font-semibold text-gray-800">{p.loanId?.customerId?.fullName || 'Unknown'}</p>
-                                                <p className="text-xs text-gray-500">ID: {p.loanId?._id?.substring(18)}...</p>
+                                                <p className="font-semibold text-slate-100">{p.loanId?.customerId?.fullName || 'Unknown'}</p>
+                                                <p className="text-xs text-slate-500">ID: {p.loanId?._id?.substring(18)}...</p>
                                             </td>
-                                            <td className="p-4 font-bold text-emerald-600">₹{p.amountPaid.toLocaleString()}</td>
+                                            <td className="p-4 font-bold text-emerald-400">₹{p.amountPaid.toLocaleString()}</td>
                                             <td className="p-4">
                                                 <div className="flex items-center space-x-1">
                                                     <CheckCircle size={14} className="text-emerald-500" />
-                                                    <span className="text-sm font-medium text-gray-600">{p.paymentMethod}</span>
+                                                    <span className="text-sm font-medium text-slate-300">{p.paymentMethod}</span>
                                                 </div>
                                             </td>
-                                            <td className="p-4 font-medium text-orange-600">₹{Math.round(p.remainingBalance).toLocaleString()}</td>
+                                            <td className="p-4 font-medium text-orange-400">₹{Math.round(p.remainingBalance).toLocaleString()}</td>
                                         </tr>
                                     ))
                                 )}
@@ -153,13 +153,13 @@ const Payments = () => {
             </div>
 
             {showModal && (
-                <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-                    <div className="bg-white rounded-xl shadow-xl w-full max-w-md p-6">
+                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+                    <div className="bg-slate-800 rounded-xl shadow-xl w-full max-w-md p-6 border border-slate-700 text-slate-100">
                         <h3 className="text-xl font-bold mb-4">Record Repayment</h3>
                         <form onSubmit={handleCreatePayment} className="space-y-4">
                             <div>
-                                <label className="block text-sm font-medium mb-1">Select Active Loan *</label>
-                                <select required className="w-full border p-2 rounded" value={formData.loanId} onChange={e => {
+                                <label className="block text-sm font-medium mb-1 text-slate-300">Select Active Loan *</label>
+                                <select required className="w-full border border-slate-600 bg-slate-900 p-2 rounded focus:ring-2 focus:ring-emerald-500 focus:outline-none" value={formData.loanId} onChange={e => {
                                     const loan = loans.find(l => l._id === e.target.value);
                                     setFormData({ ...formData, loanId: e.target.value });
                                 }}>
@@ -172,24 +172,24 @@ const Payments = () => {
                                 </select>
                             </div>
                             <div>
-                                <label className="block text-sm font-medium mb-1">Amount Paid (₹) *</label>
-                                <input required type="number" min="1" className="w-full border p-2 rounded" value={formData.amountPaid} onChange={e => setFormData({ ...formData, amountPaid: Number(e.target.value) })} />
+                                <label className="block text-sm font-medium mb-1 text-slate-300">Amount Paid (₹) *</label>
+                                <input required type="number" min="1" className="w-full border border-slate-600 bg-slate-900 p-2 rounded focus:ring-2 focus:ring-emerald-500 focus:outline-none" value={formData.amountPaid} onChange={e => setFormData({ ...formData, amountPaid: Number(e.target.value) })} />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium mb-1">Payment Method *</label>
-                                <select required className="w-full border p-2 rounded" value={formData.paymentMethod} onChange={e => setFormData({ ...formData, paymentMethod: e.target.value })}>
+                                <label className="block text-sm font-medium mb-1 text-slate-300">Payment Method *</label>
+                                <select required className="w-full border border-slate-600 bg-slate-900 p-2 rounded focus:ring-2 focus:ring-emerald-500 focus:outline-none" value={formData.paymentMethod} onChange={e => setFormData({ ...formData, paymentMethod: e.target.value })}>
                                     <option value="Cash">Cash</option>
                                     <option value="Bank">Bank Transfer</option>
                                     <option value="UPI">UPI</option>
                                 </select>
                             </div>
                             <div>
-                                <label className="block text-sm font-medium mb-1">Payment Date *</label>
-                                <input required type="date" className="w-full border p-2 rounded" value={formData.paymentDate} onChange={e => setFormData({ ...formData, paymentDate: e.target.value })} />
+                                <label className="block text-sm font-medium mb-1 text-slate-300">Payment Date *</label>
+                                <input required type="date" className="w-full border border-slate-600 bg-slate-900 p-2 rounded focus:ring-2 focus:ring-emerald-500 focus:outline-none [color-scheme:dark]" value={formData.paymentDate} onChange={e => setFormData({ ...formData, paymentDate: e.target.value })} />
                             </div>
                             <div className="flex justify-end space-x-3 mt-6">
-                                <button type="button" onClick={() => setShowModal(false)} className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded">Cancel</button>
-                                <button type="submit" disabled={loans.length === 0} className="px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 disabled:opacity-50">Record Payment</button>
+                                <button type="button" onClick={() => setShowModal(false)} className="px-4 py-2 text-slate-300 hover:bg-slate-700 rounded transition-colors">Cancel</button>
+                                <button type="submit" disabled={loans.length === 0} className="px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 disabled:opacity-50 transition-colors">Record Payment</button>
                             </div>
                         </form>
                     </div>

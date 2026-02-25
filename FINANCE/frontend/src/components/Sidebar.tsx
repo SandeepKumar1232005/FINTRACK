@@ -14,7 +14,7 @@ const Sidebar = () => {
     return (
         <div className="w-64 bg-slate-900 text-white min-h-screen flex flex-col shadow-xl">
             <div className="p-6 text-2xl font-bold border-b border-slate-700 tracking-wider">
-                FinAdmin
+                FINTRACK
             </div>
             <nav className="flex-1 p-4 space-y-2">
                 {links.map((link) => (
